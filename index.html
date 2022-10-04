@@ -7,13 +7,141 @@
     <title>JS Hangman</title>
     <link rel="stylesheet" href="dist/output.css">
 </head>
-<body>
-    <h1 class="font-extrabold bg-emerald-600 text-4xl" id="title"></h1>
+<body class="bg-emerald-300">
+    <!-- Hangman JS -->
+    <section class="bg-emerald-900 h-12 mb-20">
+        <div class="container relative mx-auto">
+            <h1 class="text-white text-3xl">Hangman JS</h1>
+        </div>
+    </section>
 
+    
     <!-- Where the game will be created. -->
-    <section class="container relative mx-auto bg-emerald-200" id="main">
-        <div class="" id="word">
+    <section class="container relative mx-auto border-2 border-emerald-800 bg-emerald-200" id="main">
+        <!-- <div class="" id="word">
+            <p class="border-2 border-sky-600" onclick="addElement('p', 'will this work?', 'word')">Click me to add divs</p>
+        </div> -->
 
+        <!-- I'm using this as a way to separate my keyboard from the guessed letters.-->
+        <div class="border border-emerald-800  h-40 p-2 m-2">
+            <!-- parent div for guess word letters -->
+            <div class="flex flex-row justify-evenly translate-y-3/4">
+                <!-- child divs that will create the guess word. -->
+                <div class="border-b-2 border-emerald-900 w-8 p-2 text-center">
+                    <p class="">X</p>
+                </div>
+                <div class="border-b-2 border-emerald-900 w-8 p-2 text-center">
+                    <p class="">X</p>
+                </div>
+                <div class="border-b-2 border-emerald-900 w-8 p-2 text-center">
+                    <p class="">X</p>
+                </div>
+                <div class="border-b-2 border-emerald-900 w-8 p-2 text-center">
+                    <p class="">X</p>
+                </div>
+                <div class="border-b-2 border-emerald-900 w-8 p-2 text-center">
+                    <p class="">X</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parent div for first keyboard row -->
+        <div class="flex flex-row justify-center space-x-24 m-4" id="firstRow" onclick="selectChar()">
+            <!-- child items for keyboard chars -->
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">Q</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">W</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">E</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">R</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">T</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">Y</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">U</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">I</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">O</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">P</p>
+            </div>
+        </div>
+
+        <!-- Parent div for second keyboard row -->
+        <div class="flex flex-row justify-center space-x-24 m-4">
+            <!-- child items for keyboard chars -->
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">A</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">S</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">D</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">F</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">G</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">H</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">J</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">K</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">L</p>
+            </div>
+        </div>
+
+        <!-- Parent div for third keyboard row -->
+        <div class="flex flex-row justify-center space-x-24 m-4">
+            <!-- child items for keyboard chars -->
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">Z</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">X</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">C</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">V</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">B</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">N</p>
+            </div>
+            <div class="border border-emerald-900 cursor-pointer p-2">
+                <p class="">M</p>
+            </div>
+        </div>
+
+        <!-- Strikes -->
+        <div class="" id="strikes">
+            <h1 class="font-bold text-4xl">Strikes:</h1>
+            <!-- Function will update number. -->
         </div>
     </section>
 
