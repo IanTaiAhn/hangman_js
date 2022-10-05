@@ -5,7 +5,7 @@ For now we can count strikes as a number.
 For the letters if we guess the word right then we can add a div or something.
 */
 
-
+// This adds the correct guesses onto the correct guess line.
 function addElement(el, val, id)   {
     // This creates an element, and whatever val is passed in is what the tag gets.
     var tag = document.createElement(el);
@@ -13,8 +13,17 @@ function addElement(el, val, id)   {
     tag.appendChild(value);
 
     // This adds the element into the document.
+    // So the element var is actually just selecting the parent cotainer where I'm going to
+    // append the child, aka put the tag/element that I created.
     var element = document.getElementById(id);
+
+    tag.classList.add("border-b-2");
+    tag.classList.add("border-emerald-900");
+    tag.classList.add("w-8");
+    tag.classList.add("p-2");
+    tag.classList.add("text-center");
     element.appendChild(tag);
+
     console.log("true");
 };
 
@@ -35,6 +44,7 @@ function selectChild()  {
             e.target.style.backgroundColor = 'green';
             e.target.style.pointerEvents = 'none';
             // Correct answer will call a function that adds a p tag into our divs that will show the word.
+            addElement('p', guessedChar, 'correctGuess');
             console.log("true");
         }
         else if (untargetDiv === 'firstRow')    {
