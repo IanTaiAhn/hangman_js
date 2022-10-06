@@ -32,10 +32,82 @@ function addElement(el, val, id)   {
 // addElement("p", "will this work?", "word");
 
 let wordToGuess = "HORSE";
+// Perhaps we can compare the length of the word to guess, and then if we guess the correct words,
+// We create the word, and display it.
+
+// I learned that we don't need to have a function call stuff from the js. Crazy.
+// First row char select to guess word.
+document.getElementById('firstRow').addEventListener('click', (e) => {
+    let guessedChar = e.target.innerText;
+    let untargetDiv = e.target.id;
+    // e.stopPropagation();
+    if (wordToGuess.includes(guessedChar))  {
+        e.target.style.backgroundColor = 'green';
+        e.target.style.pointerEvents = 'none';
+        // Correct answer will call a function that adds a p tag into our divs that will show the word.
+        addElement('p', guessedChar, 'correctGuess');
+        console.log("true");
+    }
+    else if (untargetDiv === 'firstRow')    {
+        console.log("wrong target");
+    }
+       else    {
+        e.target.style.backgroundColor = 'red';
+        e.target.style.pointerEvents = 'none';
+        // Upon hitting this path we will update our strikes in the bottom.
+        console.log("false");
+    }
+});
+
+// Second row char select to guess word.
+document.getElementById('secondRow').addEventListener('click', (e) => {
+    let guessedChar = e.target.innerText;
+    let untargetDiv = e.target.id;
+
+    if (wordToGuess.includes(guessedChar))  {
+        e.target.style.backgroundColor = 'green';
+        e.target.style.pointerEvents = 'none';
+        // Correct answer will call a function that adds a p tag into our divs that will show the word.
+        addElement('p', guessedChar, 'correctGuess');
+        console.log("true");
+    }
+    else if (untargetDiv === 'secondRow')    {
+        console.log("wrong target");
+    }
+       else    {
+        e.target.style.backgroundColor = 'red';
+        e.target.style.pointerEvents = 'none';
+        // Upon hitting this path we will update our strikes in the bottom.
+        console.log("false");
+    }
+});
+
+// Third row char select to guess word.
+document.getElementById('thirdRow').addEventListener('click', (e) => {
+    let guessedChar = e.target.innerText;
+    let untargetDiv = e.target.id;
+
+    if (wordToGuess.includes(guessedChar))  {
+        e.target.style.backgroundColor = 'green';
+        e.target.style.pointerEvents = 'none';
+        // Correct answer will call a function that adds a p tag into our divs that will show the word.
+        addElement('p', guessedChar, 'correctGuess');
+        console.log("true");
+    }
+    else if (untargetDiv === 'thirdRow')    {
+        console.log("wrong target");
+    }
+       else    {
+        e.target.style.backgroundColor = 'red';
+        e.target.style.pointerEvents = 'none';
+        // Upon hitting this path we will update our strikes in the bottom.
+        console.log("false");
+    }
+});
 
 
+/*
 function selectChild()  {
-    
     document.getElementById('firstRow').addEventListener('click', (e) => {
         let guessedChar = e.target.innerText;
         let untargetDiv = e.target.id;
@@ -100,7 +172,7 @@ function selectChild()  {
         }
     });
 }
-
+*/
 
 // If letter is in the word we need to guess, make the letter we clicked green, and add it up top
 // if letter isn't in the word then make it red, and update strikes.
