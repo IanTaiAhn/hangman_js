@@ -5,7 +5,7 @@ For now we can count strikes as a number.
 For the letters if we guess the word right then we can add a div or something.
 */
 
-// This adds the correct guesses onto the correct guess line.
+// I don't need this function anymore, but it is still cool, and useful to look at.
 function addElement(el, val, id)   {
     // This creates an element, and whatever val is passed in is what the tag gets.
     var tag = document.createElement(el);
@@ -27,15 +27,13 @@ function addElement(el, val, id)   {
     console.log("true");
 };
 
-// here we call the function, and all we need to provide is the tag, textvalue,
-//  and the id so that it knows where to be placed in the document.
-// addElement("p", "will this work?", "word");
+// All i have to do is change this word, and it will change veryting dynamically! Haha.
+// I thought about the solution while driving this morning, so this is very dope.
+let wordToGuess = "NICE JOB DUDE";
 
-let wordToGuess = "HORSE";
 // So we are goin to create a for loop, and add the word into the html already, and just make it invisible.
-
+// DID IT!
 for (let i = 0; i < wordToGuess.length; i++)    {
-
     var tag = document.createElement("p");
     var value = document.createTextNode(wordToGuess[i]);
     tag.appendChild(value);
@@ -47,32 +45,29 @@ for (let i = 0; i < wordToGuess.length; i++)    {
     tag.classList.add("p-2");
     tag.classList.add("text-center");
     tag.classList.add("invisible");
-    // tag.classList.add("hidden");
     element.appendChild(tag);
 }
 
+// I'm getting the HTML document from the ID, and then turning it into an array, since that is best practice.
 var getChild = document.getElementById("correctGuess");
-// console.log(getChild.children);
 var childrenArr = Array.from(getChild.children);
-// console.log(childrenArr)
-
-for (let i = 0; i < childrenArr.length; i++)    {
-    console.log(childrenArr[i]);
-    // childrenArr[i].classList.remove("invisible");
-}
 
 // I learned that we don't need to have a function call stuff from the js. Crazy.
 // First row char select to guess word.
 document.getElementById('firstRow').addEventListener('click', (e) => {
     let guessedChar = e.target.innerText;
     let untargetDiv = e.target.id;
-    // e.stopPropagation();
+
     if (wordToGuess.includes(guessedChar))  {
         e.target.style.backgroundColor = 'green';
         e.target.style.pointerEvents = 'none';
-        // Correct answer will call a function that adds a p tag into our divs that will show the word.
-        // I'll remove this method, and create one that targets the id, and that method will make it visible.
-        addElement('p', guessedChar, 'correctGuess');
+        // Checks which char matches our word, and targets the correct answer.
+        for (let i = 0; i < childrenArr.length; i++)    {
+            if (childrenArr[i].textContent === guessedChar)   {
+                // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
+                childrenArr[i].classList.remove("invisible");
+            }
+        }
         console.log("true");
     }
     else if (untargetDiv === 'firstRow')    {
@@ -94,9 +89,13 @@ document.getElementById('secondRow').addEventListener('click', (e) => {
     if (wordToGuess.includes(guessedChar))  {
         e.target.style.backgroundColor = 'green';
         e.target.style.pointerEvents = 'none';
-        // Correct answer will call a function that adds a p tag into our divs that will show the word.
-        // I'll remove this method, and create one that targets the id, and that method will make it visible.
-        addElement('p', guessedChar, 'correctGuess');
+        // Checks which char matches our word, and targets the correct answer.
+        for (let i = 0; i < childrenArr.length; i++)    {
+            if (childrenArr[i].textContent === guessedChar)   {
+                // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
+                childrenArr[i].classList.remove("invisible");
+            }
+        }        
         console.log("true");
     }
     else if (untargetDiv === 'secondRow')    {
@@ -118,9 +117,13 @@ document.getElementById('thirdRow').addEventListener('click', (e) => {
     if (wordToGuess.includes(guessedChar))  {
         e.target.style.backgroundColor = 'green';
         e.target.style.pointerEvents = 'none';
-        // Correct answer will call a function that adds a p tag into our divs that will show the word.
-        // I'll remove this method, and create one that targets the id, and that method will make it visible.
-        addElement('p', guessedChar, 'correctGuess');
+        // Checks which char matches our word, and targets the correct answer.
+        for (let i = 0; i < childrenArr.length; i++)    {
+            if (childrenArr[i].textContent === guessedChar)   {
+                // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
+                childrenArr[i].classList.remove("invisible");
+            }
+        }
         console.log("true");
     }
     else if (untargetDiv === 'thirdRow')    {
