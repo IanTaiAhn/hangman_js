@@ -32,8 +32,34 @@ function addElement(el, val, id)   {
 // addElement("p", "will this work?", "word");
 
 let wordToGuess = "HORSE";
-// Perhaps we can compare the length of the word to guess, and then if we guess the correct words,
-// We create the word, and display it.
+// So we are goin to create a for loop, and add the word into the html already, and just make it invisible.
+
+for (let i = 0; i < wordToGuess.length; i++)    {
+
+    var tag = document.createElement("p");
+    var value = document.createTextNode(wordToGuess[i]);
+    tag.appendChild(value);
+
+    var element = document.getElementById("correctGuess");
+    tag.classList.add("border-b-2");
+    tag.classList.add("border-emerald-800");
+    tag.classList.add("w-8");
+    tag.classList.add("p-2");
+    tag.classList.add("text-center");
+    tag.classList.add("invisible");
+    // tag.classList.add("hidden");
+    element.appendChild(tag);
+}
+
+var getChild = document.getElementById("correctGuess");
+// console.log(getChild.children);
+var childrenArr = Array.from(getChild.children);
+// console.log(childrenArr)
+
+for (let i = 0; i < childrenArr.length; i++)    {
+    console.log(childrenArr[i]);
+    // childrenArr[i].classList.remove("invisible");
+}
 
 // I learned that we don't need to have a function call stuff from the js. Crazy.
 // First row char select to guess word.
@@ -45,6 +71,7 @@ document.getElementById('firstRow').addEventListener('click', (e) => {
         e.target.style.backgroundColor = 'green';
         e.target.style.pointerEvents = 'none';
         // Correct answer will call a function that adds a p tag into our divs that will show the word.
+        // I'll remove this method, and create one that targets the id, and that method will make it visible.
         addElement('p', guessedChar, 'correctGuess');
         console.log("true");
     }
@@ -68,6 +95,7 @@ document.getElementById('secondRow').addEventListener('click', (e) => {
         e.target.style.backgroundColor = 'green';
         e.target.style.pointerEvents = 'none';
         // Correct answer will call a function that adds a p tag into our divs that will show the word.
+        // I'll remove this method, and create one that targets the id, and that method will make it visible.
         addElement('p', guessedChar, 'correctGuess');
         console.log("true");
     }
@@ -91,6 +119,7 @@ document.getElementById('thirdRow').addEventListener('click', (e) => {
         e.target.style.backgroundColor = 'green';
         e.target.style.pointerEvents = 'none';
         // Correct answer will call a function that adds a p tag into our divs that will show the word.
+        // I'll remove this method, and create one that targets the id, and that method will make it visible.
         addElement('p', guessedChar, 'correctGuess');
         console.log("true");
     }
