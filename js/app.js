@@ -1,7 +1,7 @@
 // All i have to do is change this word, and it will change veryting dynamically! Haha.
 // I thought about the solution while driving this morning, so this is very dope.
 let wordToGuess = "APPLES";
-let strikes = 0;
+let strikes = 1;
 
 function updateStrikes()    {
     let el = document.getElementById("strikes");
@@ -38,6 +38,9 @@ document.getElementById('firstRow').addEventListener('click', (e) => {
     if (wordToGuess.includes(guessedChar))  {
         e.target.style.backgroundColor = 'green';
         e.target.style.pointerEvents = 'none';
+        e.target.style.pointerEvents = 'none';
+
+        console.log(e);
         // Checks which char matches our word, and targets the correct answer.
         for (let i = 0; i < childrenArr.length; i++)    {
             if (childrenArr[i].textContent === guessedChar)   {
@@ -51,7 +54,7 @@ document.getElementById('firstRow').addEventListener('click', (e) => {
         console.log("wrong target");
     }
        else    {
-        e.target.style.backgroundColor = 'red';
+        e.target.style.backgroundColor = 'darkred';
         e.target.style.pointerEvents = 'none';
         updateStrikes();
         console.log("false");
@@ -79,7 +82,7 @@ document.getElementById('secondRow').addEventListener('click', (e) => {
         console.log("wrong target");
     }
        else    {
-        e.target.style.backgroundColor = 'red';
+        e.target.style.backgroundColor = 'darkred';
         e.target.style.pointerEvents = 'none';
         updateStrikes();
 
@@ -108,7 +111,7 @@ document.getElementById('thirdRow').addEventListener('click', (e) => {
         console.log("wrong target");
     }
        else    {
-        e.target.style.backgroundColor = 'red';
+        e.target.style.backgroundColor = 'darkred';
         e.target.style.pointerEvents = 'none';
         updateStrikes();        
         console.log("false");

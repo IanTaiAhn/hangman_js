@@ -7,24 +7,17 @@
     <title>JS Hangman</title>
     <link rel="stylesheet" href="dist/output.css">
 </head>
-<body class="bg-emerald-300">
+<body class="bg-emerald-400">
     <!-- Hangman JS -->
-    <section class="bg-emerald-900 h-12 mb-20">
-        <div class="container relative mx-auto">
-            <h1 class="text-white text-3xl">Hangman JS</h1>
-            <p class="border-b-2 invisible border-emerald-400">Border?</p>
-        </div>
+    <section class="bg-emerald-900 lg:mb-20 md:mb-12 sm:mb-6">
+            <h1 class="text-white container mx-auto text-3xl p-4">Hangman JS</h1>
     </section>
 
-    
+    <div class="container mx-auto text-lg sm:text-left text-center">!Challenge! Find the word in 5 guesses are less, or else..</div>
     <!-- Where the game will be created. -->
-    <section class="container relative mx-auto border-2 border-emerald-800 bg-emerald-200" id="main">
-        <!-- <div class="" id="word">
-            <p class="border-2 border-sky-600" onclick="addElement('p', 'will this work?', 'word')">Click me to add divs</p>
-        </div> -->
-
+    <section class="container mx-auto border-2 border-emerald-800 bg-emerald-200" id="main">
         <!-- I'm using this as a way to separate my keyboard from the guessed letters.-->
-        <div class="border border-emerald-800  h-40 p-2 m-2">
+        <div class="border border-emerald-800 sm:h-40 h-36 p-2 m-2">
             <!-- parent div for guess word letters -->
             <div class="flex flex-row justify-evenly translate-y-3/4" id="correctGuess">
                 <!-- child divs that will create the guess word. -->
@@ -36,94 +29,42 @@
         <!-- Parent div for first keyboard row -->
         <div class="flex flex-row justify-center xl:space-x-24 lg:space-x-16 md:space-x-12 m-4" id="firstRow">
             <!-- child items for keyboard chars -->
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">Q</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">W</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">E</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">R</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">T</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">Y</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">U</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">I</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">O</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">P</p>
-            </div>
-        </div>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">Q</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">W</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">E</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">R</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">T</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">Y</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">U</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">I</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">O</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">P</p>
+        </div> 
 
         <!-- Parent div for second keyboard row -->
         <div class="flex flex-row justify-center xl:space-x-24 lg:space-x-16 md:space-x-12 m-4" id="secondRow">
             <!-- child items for keyboard chars -->
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">A</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">S</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">D</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">F</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">G</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">H</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">J</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">K</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">L</p>
-            </div>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">A</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">S</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">D</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">F</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">G</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">H</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">J</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">K</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">L</p>
         </div>
 
         <!-- Parent div for third keyboard row -->
         <div class="flex flex-row justify-center xl:space-x-24 lg:space-x-16 md:space-x-12 m-4" id="thirdRow">
             <!-- child items for keyboard chars -->
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">Z</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">X</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">C</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">V</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">B</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">N</p>
-            </div>
-            <div class="border border-emerald-900 cursor-pointer">
-                <p class="p-2">M</p>
-            </div>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">Z</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">X</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">C</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">V</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">B</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">N</p>
+            <p class="border border-emerald-900 cursor-pointer p-2 md:hover:scale-125 hover:bg-emerald-400">M</p>
         </div>
     </div>
 
@@ -132,7 +73,6 @@
             <h1 class="text-4xl">Strikes:</h1>
             <!-- Function will update number. -->
             <p class="text-2xl self-end ml-2" id="strikes">0</p>
-
         </div>
     </section>
 
