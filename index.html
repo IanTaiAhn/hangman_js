@@ -32,8 +32,9 @@
             </div>
         </div>
 
+    <div class=" p-2">
         <!-- Parent div for first keyboard row -->
-        <div class="flex flex-row justify-center space-x-24 m-4" id="firstRow">
+        <div class="flex flex-row justify-center xl:space-x-24 lg:space-x-16 md:space-x-12 m-4" id="firstRow">
             <!-- child items for keyboard chars -->
             <div class="border border-emerald-900 cursor-pointer">
                 <p class="p-2">Q</p>
@@ -68,7 +69,7 @@
         </div>
 
         <!-- Parent div for second keyboard row -->
-        <div class="flex flex-row justify-center space-x-24 m-4" id="secondRow">
+        <div class="flex flex-row justify-center xl:space-x-24 lg:space-x-16 md:space-x-12 m-4" id="secondRow">
             <!-- child items for keyboard chars -->
             <div class="border border-emerald-900 cursor-pointer">
                 <p class="p-2">A</p>
@@ -100,7 +101,7 @@
         </div>
 
         <!-- Parent div for third keyboard row -->
-        <div class="flex flex-row justify-center space-x-24 m-4" id="thirdRow">
+        <div class="flex flex-row justify-center xl:space-x-24 lg:space-x-16 md:space-x-12 m-4" id="thirdRow">
             <!-- child items for keyboard chars -->
             <div class="border border-emerald-900 cursor-pointer">
                 <p class="p-2">Z</p>
@@ -124,11 +125,14 @@
                 <p class="p-2">M</p>
             </div>
         </div>
+    </div>
 
         <!-- Strikes -->
-        <div class="" id="strikes">
-            <h1 class="font-bold text-4xl">Strikes:</h1>
+        <div class="flex flex-row">
+            <h1 class="text-4xl">Strikes:</h1>
             <!-- Function will update number. -->
+            <p class="text-2xl self-end ml-2" id="strikes">0</p>
+
         </div>
     </section>
 
