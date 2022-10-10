@@ -1,7 +1,17 @@
 // All i have to do is change this word, and it will change veryting dynamically! Haha.
 // I thought about the solution while driving this morning, so this is very dope.
-let wordToGuess = "APPLES";
+let wordToGuess = "MAGPIES";
 let strikes = 1;
+let victoryCount = 0;
+
+let wordSet = new Set();
+
+// console.log(wordSet.size);
+for (let i in wordToGuess)  {
+    // console.log(wordToGuess[i]);
+    wordSet.add(wordToGuess[i]);
+}
+// console.log(wordSet.size);
 
 function updateStrikes()    {
     let el = document.getElementById("strikes");
@@ -46,6 +56,7 @@ document.getElementById('firstRow').addEventListener('click', (e) => {
             if (childrenArr[i].textContent === guessedChar)   {
                 // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
                 childrenArr[i].classList.remove("invisible");
+                victoryCount++;
             }
         }
         console.log("true");
@@ -58,6 +69,9 @@ document.getElementById('firstRow').addEventListener('click', (e) => {
         e.target.style.pointerEvents = 'none';
         updateStrikes();
         console.log("false");
+    }
+    if (victoryCount >= wordSet.size) {
+        console.log("you won!");
     }
 });
 
@@ -74,6 +88,7 @@ document.getElementById('secondRow').addEventListener('click', (e) => {
             if (childrenArr[i].textContent === guessedChar)   {
                 // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
                 childrenArr[i].classList.remove("invisible");
+                victoryCount++;
             }
         }        
         console.log("true");
@@ -87,6 +102,9 @@ document.getElementById('secondRow').addEventListener('click', (e) => {
         updateStrikes();
 
         console.log("false");
+    }
+    if (victoryCount >= wordSet.size) {
+        console.log("you won!");
     }
 });
 
@@ -103,6 +121,7 @@ document.getElementById('thirdRow').addEventListener('click', (e) => {
             if (childrenArr[i].textContent === guessedChar)   {
                 // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
                 childrenArr[i].classList.remove("invisible");
+                victoryCount++;
             }
         }
         console.log("true");
@@ -116,7 +135,12 @@ document.getElementById('thirdRow').addEventListener('click', (e) => {
         updateStrikes();        
         console.log("false");
     }
+    if (victoryCount >= wordToGuess.length) {
+        console.log("you won!");
+    }
 });
+
+
 
 // I don't need this function anymore, but it is still cool, and useful to look at.
 // adds element to specified id.
