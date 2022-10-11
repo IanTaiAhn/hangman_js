@@ -1,10 +1,9 @@
 // All i have to do is change this word, and it will change veryting dynamically! Haha.
 // I thought about the solution while driving this morning, so this is very dope.
-let wordToGuess = "MAGPIES";
+let wordToGuess = "PUNY";
 let strikes = 1;
 let victoryCount = 0;
-
-// Sometimes this is what needs to be done.... Just this time tho. First time? or second time..
+let victoryBool = false;
 
 let wordSet = new Set();
 
@@ -18,6 +17,11 @@ for (let i in wordToGuess)  {
 function updateStrikes()    {
     let el = document.getElementById("strikes");
     el.textContent = strikes++;
+}
+
+function turnOffPointerEvents() {
+    let bodyEl = document.getElementById("body");
+    bodyEl.style.pointerEvents = "none";
 }
 
 // So we are goin to create a for loop, and add the word into the html already, and just make it invisible.
@@ -58,9 +62,10 @@ document.getElementById('firstRow').addEventListener('click', (e) => {
             if (childrenArr[i].textContent === guessedChar)   {
                 // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
                 childrenArr[i].classList.remove("invisible");
-                victoryCount++;
+                console.log(victoryCount++);
             }
         }
+
         console.log("true");
     }
     else if (untargetDiv === 'firstRow')    {
@@ -70,10 +75,13 @@ document.getElementById('firstRow').addEventListener('click', (e) => {
         e.target.style.backgroundColor = 'darkred';
         e.target.style.pointerEvents = 'none';
         updateStrikes();
-        console.log("false");
+        // console.log("false");
     }
-    if (victoryCount >= wordSet.size) {
+    if (victoryCount >= wordToGuess.length) {
         console.log("you won!");
+        victoryBool = true;
+        console.log(victoryBool);
+        turnOffPointerEvents();
     }
 });
 
@@ -90,7 +98,7 @@ document.getElementById('secondRow').addEventListener('click', (e) => {
             if (childrenArr[i].textContent === guessedChar)   {
                 // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
                 childrenArr[i].classList.remove("invisible");
-                victoryCount++;
+                console.log(victoryCount++);
             }
         }        
         console.log("true");
@@ -103,10 +111,13 @@ document.getElementById('secondRow').addEventListener('click', (e) => {
         e.target.style.pointerEvents = 'none';
         updateStrikes();
 
-        console.log("false");
+        // console.log("false");
     }
-    if (victoryCount >= wordSet.size) {
+    if (victoryCount >= wordToGuess.length) {
         console.log("you won!");
+        victoryBool = true;
+        console.log(victoryBool);
+        turnOffPointerEvents();
     }
 });
 
@@ -123,7 +134,7 @@ document.getElementById('thirdRow').addEventListener('click', (e) => {
             if (childrenArr[i].textContent === guessedChar)   {
                 // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
                 childrenArr[i].classList.remove("invisible");
-                victoryCount++;
+                console.log(victoryCount++);
             }
         }
         console.log("true");
@@ -135,12 +146,17 @@ document.getElementById('thirdRow').addEventListener('click', (e) => {
         e.target.style.backgroundColor = 'darkred';
         e.target.style.pointerEvents = 'none';
         updateStrikes();        
-        console.log("false");
+        // console.log("false");
     }
     if (victoryCount >= wordToGuess.length) {
         console.log("you won!");
+        victoryBool = true;
+        console.log(victoryBool);
+        turnOffPointerEvents();
     }
 });
+
+// IF WE WIN turn off all of pointer events for the entire dom?
 
 
 
