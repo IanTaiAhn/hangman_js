@@ -34,7 +34,7 @@ for (let i = 0; i < wordToGuess.length; i++)    {
     tag.classList.add("w-8");
     tag.classList.add("p-2");
     tag.classList.add("text-center");
-    // tag.classList.add("text-4xl");
+    tag.classList.add("text-lg");
     element.appendChild(tag);
 }
 
