@@ -4,6 +4,8 @@ let wordToGuess = "MAGPIES";
 let strikes = 1;
 let victoryCount = 0;
 
+// Sometimes this is what needs to be done.... Just this time tho. First time? or second time..
+
 let wordSet = new Set();
 
 // console.log(wordSet.size);
