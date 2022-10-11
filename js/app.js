@@ -1,18 +1,16 @@
 // All i have to do is change this word, and it will change veryting dynamically! Haha.
 // I thought about the solution while driving this morning, so this is very dope.
-let wordToGuess = "PUNY";
+let wordToGuess = "COWABUNGA";
 let strikes = 1;
 let victoryCount = 0;
 let victoryBool = false;
 
+/*  for educational reasons.
 let wordSet = new Set();
-
-// console.log(wordSet.size);
 for (let i in wordToGuess)  {
-    // console.log(wordToGuess[i]);
     wordSet.add(wordToGuess[i]);
 }
-// console.log(wordSet.size);
+*/
 
 function updateStrikes()    {
     let el = document.getElementById("strikes");
@@ -24,11 +22,10 @@ function turnOffPointerEvents() {
     bodyEl.style.pointerEvents = "none";
 }
 
-// So we are goin to create a for loop, and add the word into the html already, and just make it invisible.
-// DID IT!
+// instead of 
 for (let i = 0; i < wordToGuess.length; i++)    {
     var tag = document.createElement("p");
-    var value = document.createTextNode(wordToGuess[i]);
+    var value = document.createTextNode("?");
     tag.appendChild(value);
 
     var element = document.getElementById("correctGuess");
@@ -37,13 +34,17 @@ for (let i = 0; i < wordToGuess.length; i++)    {
     tag.classList.add("w-8");
     tag.classList.add("p-2");
     tag.classList.add("text-center");
-    tag.classList.add("invisible");
+    // tag.classList.add("text-4xl");
     element.appendChild(tag);
 }
 
 // I'm getting the HTML document from the ID, and then turning it into an array, since that is best practice.
-var getChild = document.getElementById("correctGuess");
-var childrenArr = Array.from(getChild.children);
+var guessesSelect = document.getElementById("correctGuess");
+let eachSelection = Array.from(guessesSelect.children);
+// var childrenArr = Array.from(getChild.children);
+var childrenArr = Array.from(wordToGuess);
+console.log(childrenArr);
+// console.log(eachSelection);
 
 // I learned that we don't need to have a function call stuff from the js. Crazy.
 // First row char select to guess word.
@@ -59,9 +60,9 @@ document.getElementById('firstRow').addEventListener('click', (e) => {
         console.log(e);
         // Checks which char matches our word, and targets the correct answer.
         for (let i = 0; i < childrenArr.length; i++)    {
-            if (childrenArr[i].textContent === guessedChar)   {
-                // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
-                childrenArr[i].classList.remove("invisible");
+            if (childrenArr[i] === guessedChar)   {
+                console.log("i'm selecting" + "childrenArr: " + childrenArr[i] + " " + "guessedChar " + guessedChar);
+                eachSelection[i].innerText = childrenArr[i];
                 console.log(victoryCount++);
             }
         }
@@ -83,6 +84,9 @@ document.getElementById('firstRow').addEventListener('click', (e) => {
         console.log(victoryBool);
         turnOffPointerEvents();
     }
+    if (victoryBool) {
+        console.log('victory screen here');
+    }
 });
 
 // Second row char select to guess word.
@@ -95,9 +99,10 @@ document.getElementById('secondRow').addEventListener('click', (e) => {
         e.target.style.pointerEvents = 'none';
         // Checks which char matches our word, and targets the correct answer.
         for (let i = 0; i < childrenArr.length; i++)    {
-            if (childrenArr[i].textContent === guessedChar)   {
+            if (childrenArr[i] === guessedChar)   {
                 // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
-                childrenArr[i].classList.remove("invisible");
+                // childrenArr[i].classList.remove("invisible");
+                eachSelection[i].innerText = childrenArr[i];
                 console.log(victoryCount++);
             }
         }        
@@ -119,6 +124,9 @@ document.getElementById('secondRow').addEventListener('click', (e) => {
         console.log(victoryBool);
         turnOffPointerEvents();
     }
+    if (victoryBool) {
+        console.log('victory screen here');
+    }
 });
 
 // Third row char select to guess word.
@@ -126,18 +134,19 @@ document.getElementById('thirdRow').addEventListener('click', (e) => {
     let guessedChar = e.target.innerText;
     let untargetDiv = e.target.id;
 
+    console.log(guessedChar);
     if (wordToGuess.includes(guessedChar))  {
         e.target.style.backgroundColor = 'green';
         e.target.style.pointerEvents = 'none';
         // Checks which char matches our word, and targets the correct answer.
         for (let i = 0; i < childrenArr.length; i++)    {
-            if (childrenArr[i].textContent === guessedChar)   {
+            if (childrenArr[i] === guessedChar)   {
                 // console.log("i'm selecting" + "childrenArr: " + childrenArr[i].textContent + " " + "guessedChar " + guessedChar);
-                childrenArr[i].classList.remove("invisible");
+                // childrenArr[i].classList.remove("invisible");
+                eachSelection[i].innerText = childrenArr[i];
                 console.log(victoryCount++);
             }
-        }
-        console.log("true");
+        }      
     }
     else if (untargetDiv === 'thirdRow')    {
         console.log("wrong target");
@@ -154,10 +163,10 @@ document.getElementById('thirdRow').addEventListener('click', (e) => {
         console.log(victoryBool);
         turnOffPointerEvents();
     }
+    if (victoryBool) {
+        console.log('victory screen here');
+    }
 });
-
-// IF WE WIN turn off all of pointer events for the entire dom?
-
 
 
 // I don't need this function anymore, but it is still cool, and useful to look at.
