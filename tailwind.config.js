@@ -13,10 +13,15 @@ module.exports = {
         growDiv: {
           '0%': { transform: 'translateX(-100%)'},
           '100%': { transform: 'translateX(0)'},          
+        },
+        growDivLeft: {
+          '0%': { transform: 'translateX(100%)'},
+          '100%': { transform: 'translateX(0)'},          
         }
       },
       animation: {
-        'divGrowRight': 'growDiv .4s linear'
+        'divGrowRight': 'growDiv .4s linear',
+        'divGrowLeft': 'growDivLeft .4s linear'
       },
     },
   },

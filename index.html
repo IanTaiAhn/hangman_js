@@ -9,14 +9,15 @@
 </head>
 <body class="bg-emerald-400" id="body">
     <!-- CSS from JS to add it to my output.css file since tailwind saves resources -->
-    <div class="hidden border-b-2 border-emerald-800 w-8 p-2 text-center text-lg h-full w-full animate-divGrowRight"></div>
+    <div class="hidden border-b-2 border-emerald-800 bg-red-800
+     w-8 p-2 text-center text-lg h-full w-full animate-divGrowRight animate-divGrowLeft"></div>
     
     <!-- Hangman JS -->
     <section class="bg-emerald-900 lg:mb-20 md:mb-12 sm:mb-6">
             <h1 class="text-white container mx-auto text-3xl p-4">Hangman JS</h1>
     </section>
 
-    <div class="container mx-auto text-xl sm:text-left text-center">Challenge: Find the word in 5 guesses or less!</div>
+    <div class="container mx-auto text-xl sm:text-left text-center">Challenge: Find the word in 10 guesses or less!</div>
     <!-- Where the game will be created. -->
     <section class="container mx-auto border-2 border-emerald-800 bg-emerald-200 shadow-2xl" id="main">
         <!-- I'm using this as a way to separate my keyboard from the guessed letters.-->
@@ -29,9 +30,18 @@
         </div>
 
     <div class="p-2 relative">
+        <!-- Victory Panel -->
         <div class="flex flex-row items-center justify-center absolute bottom-0 -translate-x-2 bg-emerald-800" id="victoryPanel">
             <p class="text-white text-4xl hidden" id="victoryText">You Won!!!</p>
+            <!-- Button that makes the word harder. -->
+
         </div>
+        <!-- Defeat Panel -->
+        <div class="flex flex-row items-center justify-center absolute bottom-0 -translate-x-2 bg-red-800" id="defeatPanel">
+            <p class="text-white text-4xl hidden" id="defeatText">Defeat</p>
+            <!-- Button to try again. -->
+        </div>
+
         <!-- Parent div for first keyboard row -->
         <div class="flex flex-row justify-center xl:space-x-24 lg:space-x-16 md:space-x-12 space-x-2 m-4" id="firstRow">
             <!-- child items for keyboard chars -->

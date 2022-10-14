@@ -1,7 +1,7 @@
 // All i have to do is change this word, and it will change veryting dynamically! Haha.
 // I thought about the solution while driving this morning, so this is very dope.
 let wordToGuess = "TEST";
-let strikes = 1;
+let strikes = 8;
 let victoryCount = 0;
 let victoryBool = false;
 
@@ -31,6 +31,17 @@ function showVictory()  {
     victoryPanel.classList.add("w-full");   
     victoryText.classList.remove("hidden");
     console.log("victorypanel is shown");
+}
+
+function showDefeat()   {
+    let defeatPanel = document.getElementById("defeatPanel");
+    let defeatText = document.getElementById("defeatText");
+    // victoryPanel.style.animation = "";
+    defeatPanel.classList.add("animate-divGrowLeft");
+    defeatPanel.classList.add("h-full");
+    defeatPanel.classList.add("w-full");   
+    defeatText.classList.remove("hidden");
+    console.log("defeatpanel is shown");
 }
 
 // instead of 
@@ -99,9 +110,9 @@ document.getElementById('firstRow').addEventListener('click', (e) => {
         showVictory();
     }
 
-    if (victoryBool) {
-        console.log('victory screen here');
-        
+    if (strikes >= 10) {
+        // Defeat
+        showDefeat();
     }
 });
 
@@ -142,8 +153,9 @@ document.getElementById('secondRow').addEventListener('click', (e) => {
         showVictory();
 
     }
-    if (victoryBool) {
-        console.log('victory screen here');
+    if (strikes >= 10) {
+        // Defeat
+        showDefeat();
     }
 });
 
@@ -183,8 +195,9 @@ document.getElementById('thirdRow').addEventListener('click', (e) => {
         showVictory();
 
     }
-    if (victoryBool) {
-        console.log('victory screen here');
+    if (strikes >= 10) {
+        // Defeat
+        showDefeat();
     }
 });
 
