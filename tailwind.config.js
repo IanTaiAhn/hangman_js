@@ -8,7 +8,17 @@ module.exports = {
       lg: '976px',
       xl: '1440px',
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        growDiv: {
+          '0%': { transform: 'translateX(-100%)'},
+          '100%': { transform: 'translateX(0)'},          
+        }
+      },
+      animation: {
+        'divGrowRight': 'growDiv .4s linear'
+      },
+    },
   },
   plugins: [],
 }

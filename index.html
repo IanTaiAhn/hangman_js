@@ -8,20 +8,14 @@
     <link rel="stylesheet" href="dist/output.css">
 </head>
 <body class="bg-emerald-400" id="body">
-    <!-- CSS from JS -->
-    <div class="hidden border-b-2 border-emerald-800 w-8 p-2 text-center text-lg"></div>
-<!--     tag.classList.add("border-b-2");
-    tag.classList.add("border-emerald-800");
-    tag.classList.add("w-8");
-    tag.classList.add("p-2");
-    tag.classList.add("text-center");
-    tag.classList.add("text-lg"); -->
+    <!-- CSS from JS to add it to my output.css file since tailwind saves resources -->
+    <div class="hidden border-b-2 border-emerald-800 w-8 p-2 text-center text-lg h-full w-full animate-divGrowRight"></div>
+    
     <!-- Hangman JS -->
     <section class="bg-emerald-900 lg:mb-20 md:mb-12 sm:mb-6">
             <h1 class="text-white container mx-auto text-3xl p-4">Hangman JS</h1>
     </section>
 
-    <!-- <div class="flex flex-row text-4xl bg-emerald-500 container mx-auto">Something is wrong here</div> -->
     <div class="container mx-auto text-xl sm:text-left text-center">Challenge: Find the word in 5 guesses or less!</div>
     <!-- Where the game will be created. -->
     <section class="container mx-auto border-2 border-emerald-800 bg-emerald-200 shadow-2xl" id="main">
@@ -34,7 +28,10 @@
             </div>
         </div>
 
-    <div class="p-2">
+    <div class="p-2 relative">
+        <div class="flex flex-row items-center justify-center absolute bottom-0 -translate-x-2 bg-emerald-800" id="victoryPanel">
+            <p class="text-white text-4xl hidden" id="victoryText">You Won!!!</p>
+        </div>
         <!-- Parent div for first keyboard row -->
         <div class="flex flex-row justify-center xl:space-x-24 lg:space-x-16 md:space-x-12 space-x-2 m-4" id="firstRow">
             <!-- child items for keyboard chars -->

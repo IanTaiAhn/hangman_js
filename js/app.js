@@ -1,6 +1,6 @@
 // All i have to do is change this word, and it will change veryting dynamically! Haha.
 // I thought about the solution while driving this morning, so this is very dope.
-let wordToGuess = "COWABUNGA";
+let wordToGuess = "TEST";
 let strikes = 1;
 let victoryCount = 0;
 let victoryBool = false;
@@ -20,6 +20,17 @@ function updateStrikes()    {
 function turnOffPointerEvents() {
     let bodyEl = document.getElementById("body");
     bodyEl.style.pointerEvents = "none";
+}
+
+function showVictory()  {
+    let victoryPanel = document.getElementById("victoryPanel");
+    let victoryText = document.getElementById("victoryText");
+    // victoryPanel.style.animation = "";
+    victoryPanel.classList.add("animate-divGrowRight");
+    victoryPanel.classList.add("h-full");
+    victoryPanel.classList.add("w-full");   
+    victoryText.classList.remove("hidden");
+    console.log("victorypanel is shown");
 }
 
 // instead of 
@@ -78,14 +89,19 @@ document.getElementById('firstRow').addEventListener('click', (e) => {
         updateStrikes();
         // console.log("false");
     }
+
     if (victoryCount >= wordToGuess.length) {
         console.log("you won!");
         victoryBool = true;
         console.log(victoryBool);
         turnOffPointerEvents();
+        // Maybe just put the victory screen part in here?
+        showVictory();
     }
+
     if (victoryBool) {
         console.log('victory screen here');
+        
     }
 });
 
@@ -123,6 +139,8 @@ document.getElementById('secondRow').addEventListener('click', (e) => {
         victoryBool = true;
         console.log(victoryBool);
         turnOffPointerEvents();
+        showVictory();
+
     }
     if (victoryBool) {
         console.log('victory screen here');
@@ -162,6 +180,8 @@ document.getElementById('thirdRow').addEventListener('click', (e) => {
         victoryBool = true;
         console.log(victoryBool);
         turnOffPointerEvents();
+        showVictory();
+
     }
     if (victoryBool) {
         console.log('victory screen here');
