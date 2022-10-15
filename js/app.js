@@ -1,6 +1,6 @@
 // All i have to do is change this word, and it will change veryting dynamically! Haha.
 // I thought about the solution while driving this morning, so this is very dope.
-let wordToGuess = "TEST";
+let wordToGuess = "YOGURT";
 let strikes = 0;
 let victoryCount = 0;
 let victoryBool = false;
