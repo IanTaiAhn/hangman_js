@@ -1,16 +1,18 @@
-// All i have to do is change this word, and it will change veryting dynamically! Haha.
+import { randomArr } from "./randomWords.js";
 // I thought about the solution while driving this morning, so this is very dope.
-let wordToGuess = "YOGURT";
+// let wordToGuess = "YOGURT";
+let wordToGuess = randomArr[Math.floor(Math.random()*randomArr.length)].toUpperCase();
 let strikes = 0;
 let victoryCount = 0;
 let victoryBool = false;
-
 /*  for educational reasons.
 let wordSet = new Set();
 for (let i in wordToGuess)  {
     wordSet.add(wordToGuess[i]);
 }
 */
+
+    // console.log(item);
 
 function updateStrikes()    {
     let el = document.getElementById("strikes");

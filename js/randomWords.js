@@ -1,4 +1,4 @@
-var randomArr = new Array(
+export var randomArr = new Array(
     "resink",
     "transversomedial",
     "pharyngopathy",
@@ -1000,6 +1000,4 @@ var randomArr = new Array(
     "outdraft",
     "squandermania");
 
-    var item = randomArr[Math.floor(Math.random()*randomArr.length)];
-    console.log(item);
     // I am going to make this work! Hehehe.
